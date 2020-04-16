@@ -10,7 +10,7 @@ node('master')
     }
     stage('ContinuousDeployment')
     {
-        sh label: '', script: 'echo "Deployment completed" '
+        sh label: '', script: 'cp /var/lib/jenkins/workspace/pipe/webapp/target/webapp.war /var/lib/app1/webapps/test1.war '
     }
     stage('ContinuousTesting')
     {
@@ -20,7 +20,7 @@ node('master')
      stage('ContinuousDelivery')
     {
         //input message: 'Waiting for Approval from the DM', submitter: 'Srinivas'
-        sh label: '', script: 'echo "Continious delivery completed" '
+        sh label: '', script: 'cp /var/lib/jenkins/workspace/pipe/webapp/target/webapp.war /var/lib/app2/webapps/test2.war '
     }
     
     
